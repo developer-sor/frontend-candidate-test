@@ -1,0 +1,112 @@
+<html ng-app>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="schema.css"/>
+</head>
+
+
+<body ng-view>
+
+
+<h1>Det kuleste skjemaet</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-ms-4">
+
+            <form>
+
+                <div>
+                    <label for="email">Din epostadresse</label>
+                    <input
+                            ng-model="applicant.email"
+                            type="text"
+                            id="email"
+                            placeholder="email"
+                            name="email"
+                            value="email"/>
+                </div>
+
+                <div>
+                    <label for="is_foreign">Er du utenlandsk statsborger?</label>
+                    <input
+                            ng-model="applicant.is_foreign"
+                            type="checkbox"
+                            id="is_foreign"
+                            name="is_foreign"
+                            />
+                </div>
+
+                <div>
+                    <label for="ssid">Hva er ditt personnummer?</label>
+                    <input
+                            ng-model="applicant.ssid"
+                            ng-pattern="/[0-9]{11}/"
+                            type="text"
+                            id="ssid"
+                            name="ssid"
+                            placeholder="Personnummer (11 siffre)"
+                            />
+                    <span class="validation-error" ng-hide="applicant.ssid">11 siffer</span>
+                </div>
+
+
+                <div>
+                    <label for="nationality">Hva er ditt statsborgerskap (hvis ikke norsk)?</label>
+                    <input
+                            ng-model="applicant.nationality"
+                            type="text"
+                            id="nationality"
+                            name="nationality"/>
+                </div>
+
+
+                <div>
+                    <label for="propertyvalue">Hvor mye koster boligen?</label>
+                    <input
+                            ng-model="applicant.propertyvalue"
+                            type="number"
+                            id="propertyvalue"
+                            name="propertyvalue"/>
+                </div>
+
+
+                <div>
+                    <label for="amount">Hvor mye ønsker du å låne?</label>
+                    <input
+                            ng-model="applicant.amount"
+                            type="number"
+                            id="amount"
+                            name="amount"/>
+
+                </div>
+
+                <span class="validation-error" ng-show="applicant.propertyvalue < applicant.amount">Du kan ikke låne mer enn boligen koster!</span>
+
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="debug">
+
+    <h1>Schema values: </h1>
+
+    <ul>
+        <li ng-repeat="(key, value) in applicant">
+            {{key}}: {{value}}
+        </li>
+    </ul>
+
+
+</div>
+
+
+</body>
+
+</html>
