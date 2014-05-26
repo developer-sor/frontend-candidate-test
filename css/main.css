@@ -2011,7 +2011,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn:active,
@@ -2032,8 +2032,8 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #333333;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #0092a3;
   border-color: #cccccc;
 }
 .btn-default:hover,
@@ -2041,8 +2041,8 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: #ebebeb;
+  color: #ffffff;
+  background-color: #006d7a;
   border-color: #adadad;
 }
 .btn-default:active,
@@ -2065,12 +2065,12 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #ffffff;
+  background-color: #0092a3;
   border-color: #cccccc;
 }
 .btn-default .badge {
-  color: #ffffff;
-  background-color: #333333;
+  color: #0092a3;
+  background-color: #ffffff;
 }
 .btn-primary {
   color: #ffffff;
@@ -5792,6 +5792,7 @@ button.close {
   margin-left: -15px;
   margin-right: -15px;
   padding-bottom: 50px;
+  border-bottom: 1px solid #00738f;
 }
 .container .innledende {
   margin-left: -15px;
@@ -5836,7 +5837,19 @@ button.close {
     width: 33.33333333333333%;
   }
 }
+.container .innledende .arrowWrapper,
+.container .avsluttendeSeksjon .arrowWrapper {
+  text-align: center;
+}
+.container .innledende .adjustHeight,
+.container .avsluttendeSeksjon .adjustHeight {
+  visibility: hidden;
+  line-height: 0;
+}
 /*container*/
+.mainContainer {
+  margin-top: 50px;
+}
 body {
   font-family: 'Crete Round', serif;
   background-color: #bbbbbb !important;
@@ -5844,4 +5857,10 @@ body {
 }
 section {
   background-color: #ffffff;
+}
+h2 {
+  color: #0092a3;
+}
+form .validation-error {
+  color: #27acbc;
 }

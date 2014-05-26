@@ -11,29 +11,35 @@
 
 <body ng-view>
 
-<section class="container">
 
+
+<section class="container mainContainer">
     <header>
-        <img src="images/logo.png" alt="Logo" class="pull-right" />
+        <img src="images/logo.png" alt="Logo" class="logo"/><br />
         <h1>Det kuleste skjemaet</h1>
     </header>
-
+    
     <section class="innledende">
-        <h2>Innledende seksjon</h2>
-        <p>Integer in luctus ipsum. Donec imperdiet sem varius magna luctus tincidunt. In sit amet lectus sed nunc convallis scelerisque vitae ac mi. Cras consectetur tellus quis tellus ultricies, sit amet semper nisi sodales. Nam molestie nulla in augue ultricies dignissim. Pellentesque eu eros mauris. Proin in mauris in erat rhoncus iaculis. Etiam tempus sit amet sem ut scelerisque. Curabitur ac ultrices dolor. Curabitur suscipit porta justo, vel dapibus ligula.
-        </p>
-        <p>Nullam nec lacus ut quam laoreet sodales nec non ipsum. Cras interdum vestibulum tempor. Vivamus nec ultrices tortor. In consectetur est vitae eleifend ullamcorper. Praesent in sodales dui. Ut non sagittis libero. Morbi quis urna in nisl tempus venenatis ac id erat. Praesent tempus quam erat, ac hendrerit neque facilisis eleifend. Nam blandit facilisis nibh, et malesuada ante pellentesque eu. Morbi quis sapien a leo porta cursus vitae non augue. Ut congue odio eu commodo placerat. Duis pellentesque tellus eu sapien suscipit, a consectetur quam pharetra. Nulla eleifend, nisi sit amet tempor lacinia, elit magna placerat lacus, sit amet molestie dui ipsum non mauris.
-        </p>
-        <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
-        </p>
-
+            <h2>Innledende seksjon</h2>
+        <div class="textWrapper">
+            
+            <p>Integer in luctus ipsum. Donec imperdiet sem varius magna luctus tincidunt. In sit amet lectus sed nunc convallis scelerisque vitae ac mi. Cras consectetur tellus quis tellus ultricies, sit amet semper nisi sodales. Nam molestie nulla in augue ultricies dignissim. Pellentesque eu eros mauris. Proin in mauris in erat rhoncus iaculis. Etiam tempus sit amet sem ut scelerisque. Curabitur ac ultrices dolor. Curabitur suscipit porta justo, vel dapibus ligula.
+            </p>
+            <p>Nullam nec lacus ut quam laoreet sodales nec non ipsum. Cras interdum vestibulum tempor. Vivamus nec ultrices tortor. In consectetur est vitae eleifend ullamcorper. Praesent in sodales dui. Ut non sagittis libero. Morbi quis urna in nisl tempus venenatis ac id erat. Praesent tempus quam erat, ac hendrerit neque facilisis eleifend. Nam blandit facilisis nibh, et malesuada ante pellentesque eu. Morbi quis sapien a leo porta cursus vitae non augue. Ut congue odio eu commodo placerat. Duis pellentesque tellus eu sapien suscipit, a consectetur quam pharetra. Nulla eleifend, nisi sit amet tempor lacinia, elit magna placerat lacus, sit amet molestie dui ipsum non mauris.
+            </p>
+            <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
+            </p>
+        </div>
+        <div class="arrowWrapper">
+            <span class="glyphicon glyphicon-chevron-down hidden-md hidden-lg"></span>
+        </div><!-- /.arrowWrapper --><br />
     </section>
-
-
+    
+    
     <section class="skjema">
-
+    
             <form role="form">
-
+    
                 <div class="form-group">
                     <label for="email">Din epostadresse</label>
                     <div class="col-md-12">
@@ -48,20 +54,18 @@
                                 />
                     </div><!-- /.col-md-12 -->
                 </div>
-
-                <div class="form-group">
-                    <label for="is_foreign">Er du utenlandsk statsborger?</label>
-                    <div class="col-md-12">
+    
+                <div class="checkbox">
+                    <label for="is_foreign">Er du utenlandsk statsborger?
                         <input
                                 ng-model="applicant.is_foreign"
                                 type="checkbox"
                                 id="is_foreign"
                                 name="is_foreign"
-                                class="form-control"
                                 />
-                    </div><!-- /.col-md-12 -->
+                    </label>
                 </div>
-
+    
                 <div class="form-group">
                     <label for="ssid">Hva er ditt personnummer?</label>
                     <div class="col-md-12">
@@ -77,8 +81,8 @@
                     </div><!-- /.col-md-12 -->
                     <span class="validation-error" ng-hide="applicant.ssid">11 siffer</span>
                 </div>
-
-
+    
+    
                 <div class="form-group">
                     <label for="nationality">Hva er ditt statsborgerskap (hvis ikke norsk)?</label>
                     <div class="col-md-12">
@@ -90,8 +94,8 @@
                                 class="form-control"/>
                     </div><!-- /.col-md-12 -->
                 </div>
-
-
+    
+    
                 <div class="form-group">
                     <label for="propertyvalue">Hvor mye koster boligen?</label>
                     <div class="col-md-12">
@@ -103,8 +107,8 @@
                                 class="form-control"/>
                     </div><!-- /.col-md-12 -->
                 </div>
-
-
+    
+    
                 <div class="form-group">
                     <label for="amount">Hvor mye ønsker du å låne?</label>
                     <div class="col-md-12">
@@ -115,19 +119,19 @@
                                 name="amount"
                                 class="form-control"/>
                     </div><!-- /.col-md-12 -->
-
+    
                 </div>
-
+    
                 <span class="validation-error" ng-show="applicant.propertyvalue < applicant.amount">Du kan ikke låne mer enn boligen koster!</span>
-
-
+                <button class="btn btn-default" type="submit">Send inn skjema</button>
+    
             </form>
     </section>
-
-
+    
+    
     <section class="avsluttendeSeksjon">
-        <div>
-            <h2>Avsluttende seksjon</h2>
+        <h2>Avsluttende seksjon</h2>
+        <div class="textWrapper">    
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum sem non velit fermentum, sed vestibulum lacus suscipit. Maecenas dapibus ut velit sed accumsan. Ut tincidunt scelerisque mi, eu tempor erat commodo id. Aenean ultrices, turpis sed condimentum rhoncus, turpis nibh tempor dui, vitae sagittis dolor erat vel orci. Etiam molestie dignissim aliquam. Maecenas quis neque tincidunt, lobortis nibh pretium, tincidunt diam. Praesent viverra magna quis elit fermentum, nec imperdiet turpis vestibulum. Quisque et arcu sit amet magna pellentesque dictum a in lorem. Sed blandit ante vitae feugiat dapibus. Vivamus adipiscing tempus neque, eu venenatis purus dictum at. Quisque non augue adipiscing, facilisis felis a, pretium ante. Proin adipiscing ac justo eget rhoncus. Mauris sollicitudin mauris eu nibh malesuada semper. Phasellus tristique commodo pretium.
             </p>
@@ -139,32 +143,42 @@
             </p>
             <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
             </p>
-
-        </div>
-    </section>
-
     
-    <div class="debug">
-
+        </div>
+        <div class="arrowWrapper">
+            <span class="glyphicon glyphicon-chevron-down hidden-md hidden-lg"></span>
+        </div><!-- /.arrowWrapper --><br />
+    </section>
+    
+    
+    <div class="debug row">
         <h1>Schema values: </h1>
-
+    
         <ul>
             <li ng-repeat="(key, value) in applicant">
                 {{key}}: {{value}}
             </li>
         </ul>
-
-
     </div>
-
-</section>
-
-
-
-
+</section><!-- /.container -->
 
 <script src="js/jquery.js"></script>
 <script src="js/main.min.js"></script>
+<script>
+    $(function(){
+    $(".arrowWrapper").on('click', function(){  
+        $(this).parent().find('.textWrapper').toggleClass('adjustHeight');
+
+        if($(this).find('span').hasClass('glyphicon glyphicon-chevron-down')){
+            $(this).find('span.glyphicon.glyphicon-chevron-down').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+        }
+        else{
+            $(this).find('span.glyphicon.glyphicon-chevron-up').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down'); 
+        }
+
+    });
+});
+</script>
 </body>
 
 </html>

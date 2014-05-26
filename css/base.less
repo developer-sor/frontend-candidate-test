@@ -1,8 +1,11 @@
 .container{
 	border-radius: 15px;
+	
 	header{
 		.make-row();
 		padding-bottom: 50px;
+		border-bottom: 1px solid @darkBlue;
+
 	}
 
 	.innledende{
@@ -18,4 +21,19 @@
 		.make-row();
 		.make-md-column(4);
 	}
+
+	.innledende,
+	.avsluttendeSeksjon{
+		.arrowWrapper{
+			text-align: center;
+		}
+		.adjustHeight{
+			visibility: hidden;
+			line-height: 0;
+		}
+	}
 }/*container*/
+
+.mainContainer{
+	margin-top: 50px;
+}
