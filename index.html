@@ -1,8 +1,9 @@
 <!doctype  html ng-app>
 <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>Det kuleste skjemaet</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <link rel="stylesheet" href="css/slider.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
@@ -11,147 +12,144 @@
 
 <body ng-view>
 
+<div class="logo container">
+    <div class="logoWrapper">
+        <img src="images/logo.png" alt="Logo" class="logo"/>
+    </div><!-- /.logoWrapper -->
+</div><!-- /.logo -->
 
 
-<section class="container mainContainer">
-    <header>
-        <img src="images/logo.png" alt="Logo" class="logo"/><br />
-        <h1>Det kuleste skjemaet</h1>
-    </header>
-    
-    <section class="innledende">
+<div class="container">
+        <header>
+            <h1>Det kuleste skjemaet</h1>
+        </header>
+        
+        <section class="innledende">
             <h2>Innledende seksjon</h2>
-        <div class="textWrapper">
-            
-            <p>Integer in luctus ipsum. Donec imperdiet sem varius magna luctus tincidunt. In sit amet lectus sed nunc convallis scelerisque vitae ac mi. Cras consectetur tellus quis tellus ultricies, sit amet semper nisi sodales. Nam molestie nulla in augue ultricies dignissim. Pellentesque eu eros mauris. Proin in mauris in erat rhoncus iaculis. Etiam tempus sit amet sem ut scelerisque. Curabitur ac ultrices dolor. Curabitur suscipit porta justo, vel dapibus ligula.
-            </p>
-            <p>Nullam nec lacus ut quam laoreet sodales nec non ipsum. Cras interdum vestibulum tempor. Vivamus nec ultrices tortor. In consectetur est vitae eleifend ullamcorper. Praesent in sodales dui. Ut non sagittis libero. Morbi quis urna in nisl tempus venenatis ac id erat. Praesent tempus quam erat, ac hendrerit neque facilisis eleifend. Nam blandit facilisis nibh, et malesuada ante pellentesque eu. Morbi quis sapien a leo porta cursus vitae non augue. Ut congue odio eu commodo placerat. Duis pellentesque tellus eu sapien suscipit, a consectetur quam pharetra. Nulla eleifend, nisi sit amet tempor lacinia, elit magna placerat lacus, sit amet molestie dui ipsum non mauris.
-            </p>
-            <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
-            </p>
-        </div>
-        <div class="arrowWrapper">
-            <span class="glyphicon glyphicon-chevron-down hidden-md hidden-lg"></span>
-        </div><!-- /.arrowWrapper --><br />
-    </section>
-    
-    
-    <section class="skjema">
-    
-            <form role="form">
-    
-                <div class="form-group">
-                    <label for="email">Din epostadresse</label>
-                    <div class="col-md-12">
-                        <input
-                                ng-model="applicant.email"
-                                type="text"
-                                id="email"
-                                placeholder="email"
-                                name="email"
-                                value="email"
-                                class="form-control"
-                                />
-                    </div><!-- /.col-md-12 -->
-                </div>
-    
-                <div class="checkbox">
-                    <label for="is_foreign">Er du utenlandsk statsborger?
-                        <input
-                                ng-model="applicant.is_foreign"
-                                type="checkbox"
-                                id="is_foreign"
-                                name="is_foreign"
-                                />
-                    </label>
-                </div>
-    
-                <div class="form-group">
-                    <label for="ssid">Hva er ditt personnummer?</label>
-                    <div class="col-md-12">
-                        <input
-                                ng-model="applicant.ssid"
-                                ng-pattern="/[0-9]{11}/"
-                                type="text"
-                                id="ssid"
-                                name="ssid"
-                                placeholder="Personnummer (11 siffre)"
-                                class="form-control"
-                                />
-                    </div><!-- /.col-md-12 -->
-                    <span class="validation-error" ng-hide="applicant.ssid">11 siffer</span>
-                </div>
-    
-    
-                <div class="form-group">
-                    <label for="nationality">Hva er ditt statsborgerskap (hvis ikke norsk)?</label>
-                    <div class="col-md-12">
-                        <input
-                                ng-model="applicant.nationality"
-                                type="text"
-                                id="nationality"
-                                name="nationality"
-                                class="form-control"/>
-                    </div><!-- /.col-md-12 -->
-                </div>
-    
-    
-                <div class="form-group">
-                    <label for="propertyvalue">Hvor mye koster boligen?</label>
-                    <div class="col-md-12">
-                        <input
-                                ng-model="applicant.propertyvalue"
-                                type="number"
-                                id="propertyvalue"
-                                name="propertyvalue"
-                                class="form-control"/>
-                    </div><!-- /.col-md-12 -->
-                </div>
-    
-    
-                <div class="form-group">
-                    <label for="amount">Hvor mye ønsker du å låne?</label>
-                    <div class="col-md-12">
-                        <input
-                                ng-model="applicant.amount"
-                                type="number"
-                                id="amount"
-                                name="amount"
-                                class="form-control"/>
-                    </div><!-- /.col-md-12 -->
-    
-                </div>
-    
-                <span class="validation-error" ng-show="applicant.propertyvalue < applicant.amount">Du kan ikke låne mer enn boligen koster!</span>
-                <button class="btn btn-default" type="submit">Send inn skjema</button>
-    
-            </form>
-    </section>
-    
-    
-    <section class="avsluttendeSeksjon">
-        <h2>Avsluttende seksjon</h2>
-        <div class="textWrapper">    
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum sem non velit fermentum, sed vestibulum lacus suscipit. Maecenas dapibus ut velit sed accumsan. Ut tincidunt scelerisque mi, eu tempor erat commodo id. Aenean ultrices, turpis sed condimentum rhoncus, turpis nibh tempor dui, vitae sagittis dolor erat vel orci. Etiam molestie dignissim aliquam. Maecenas quis neque tincidunt, lobortis nibh pretium, tincidunt diam. Praesent viverra magna quis elit fermentum, nec imperdiet turpis vestibulum. Quisque et arcu sit amet magna pellentesque dictum a in lorem. Sed blandit ante vitae feugiat dapibus. Vivamus adipiscing tempus neque, eu venenatis purus dictum at. Quisque non augue adipiscing, facilisis felis a, pretium ante. Proin adipiscing ac justo eget rhoncus. Mauris sollicitudin mauris eu nibh malesuada semper. Phasellus tristique commodo pretium.
-            </p>
-            <p>Morbi purus tortor, porta ac orci sit amet, aliquet vestibulum quam. Curabitur eu ornare dui. Maecenas tempor congue massa, nec porta leo euismod nec. Praesent sollicitudin lectus nisl, id volutpat tortor commodo vel. Phasellus et neque a mauris cursus pharetra. Suspendisse condimentum massa a quam rhoncus mattis. Fusce adipiscing mi vel commodo tincidunt. Fusce euismod ligula mi, ut sagittis elit gravida vitae. Donec pharetra massa quis urna euismod, eu ultrices sem hendrerit. Ut molestie, leo sed auctor tempor, lacus tortor tincidunt est, at dignissim libero erat eget ipsum. Nam venenatis ultrices tristique. Etiam fringilla nibh eget mauris blandit, et sagittis diam venenatis. Curabitur porta augue nec nisi mollis euismod. Donec massa erat, porta tempus ipsum at, porta tempus augue.
-            </p>
-            <p>Integer in luctus ipsum. Donec imperdiet sem varius magna luctus tincidunt. In sit amet lectus sed nunc convallis scelerisque vitae ac mi. Cras consectetur tellus quis tellus ultricies, sit amet semper nisi sodales. Nam molestie nulla in augue ultricies dignissim. Pellentesque eu eros mauris. Proin in mauris in erat rhoncus iaculis. Etiam tempus sit amet sem ut scelerisque. Curabitur ac ultrices dolor. Curabitur suscipit porta justo, vel dapibus ligula.
-            </p>
-            <p>Nullam nec lacus ut quam laoreet sodales nec non ipsum. Cras interdum vestibulum tempor. Vivamus nec ultrices tortor. In consectetur est vitae eleifend ullamcorper. Praesent in sodales dui. Ut non sagittis libero. Morbi quis urna in nisl tempus venenatis ac id erat. Praesent tempus quam erat, ac hendrerit neque facilisis eleifend. Nam blandit facilisis nibh, et malesuada ante pellentesque eu. Morbi quis sapien a leo porta cursus vitae non augue. Ut congue odio eu commodo placerat. Duis pellentesque tellus eu sapien suscipit, a consectetur quam pharetra. Nulla eleifend, nisi sit amet tempor lacinia, elit magna placerat lacus, sit amet molestie dui ipsum non mauris.
-            </p>
-            <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
-            </p>
-    
-        </div>
-        <div class="arrowWrapper">
-            <span class="glyphicon glyphicon-chevron-down hidden-md hidden-lg"></span>
-        </div><!-- /.arrowWrapper --><br />
-    </section>
-    
-    
-    <div class="debug row">
+
+            <div class="textWrapper">
+                
+                <p>Integer in luctus ipsum. Donec imperdiet sem varius magna luctus tincidunt. In sit amet lectus sed nunc convallis scelerisque vitae ac mi. Cras consectetur tellus quis tellus ultricies, sit amet semper nisi sodales. Nam molestie nulla in augue ultricies dignissim. Pellentesque eu eros mauris. Proin in mauris in erat rhoncus iaculis. Etiam tempus sit amet sem ut scelerisque. Curabitur ac ultrices dolor. Curabitur suscipit porta justo, vel dapibus ligula.
+                </p>
+                <p>Nullam nec lacus ut quam laoreet sodales nec non ipsum. Cras interdum vestibulum tempor. Vivamus nec ultrices tortor. In consectetur est vitae eleifend ullamcorper. Praesent in sodales dui. Ut non sagittis libero. Morbi quis urna in nisl tempus venenatis ac id erat. Praesent tempus quam erat, ac hendrerit neque facilisis eleifend. Nam blandit facilisis nibh, et malesuada ante pellentesque eu. Morbi quis sapien a leo porta cursus vitae non augue. Ut congue odio eu commodo placerat. Duis pellentesque tellus eu sapien suscipit, a consectetur quam pharetra. Nulla eleifend, nisi sit amet tempor lacinia, elit magna placerat lacus, sit amet molestie dui ipsum non mauris.
+                </p>
+                <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
+                </p>
+            </div>
+            <div class="arrowWrapper">
+                <span class="glyphicon glyphicon-chevron-up hidden-md hidden-lg"></span>
+            </div><!-- /.arrowWrapper --><br />
+        </section><!-- innledende -->
+
+         <section class="skjema">
+        
+                <form role="form" id="skjema">
+                    <h2>Søk om lån</h2>
+                    <div class="form-group">
+                        <label for="email">Din epostadresse</label>
+                            <input
+                                    ng-model="applicant.email"
+                                    type="text"
+                                    id="email"
+                                    placeholder="email"
+                                    name="email"
+                                    class="form-control"
+                                    required
+                                    />
+                            <div class="error"></div><!-- /.error -->
+                        
+                    </div>
+        
+                    <div class="checkbox">
+                        <label for="is_foreign">Er du utenlandsk statsborger?
+                            <input
+                                    ng-model="applicant.is_foreign"
+                                    type="checkbox"
+                                    id="is_foreign"
+                                    name="is_foreign"
+                                    />
+                        </label>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="ssid">Hva er ditt personnummer?</label>
+                            <input
+                                    ng-model="applicant.ssid"
+                                    ng-pattern="/[0-9]{11}/"
+                                    type="text"
+                                    id="ssid"
+                                    name="ssid"
+                                    placeholder="Personnummer (11 siffre)"
+                                    class="form-control"
+                                    required
+                                    />
+                            <div class="error"></div><!-- /.error -->
+                       <!--  <span class="validation-error" ng-hide="applicant.ssid">11 siffer</span> --><!-- Fjernet for å vise JS validering -->
+                    </div>
+        
+        
+                    <div class="form-group" id="statsborgerInput">
+                        <label for="nationality">Hva er ditt statsborgerskap (hvis ikke norsk)?</label>
+                            <input
+                                    ng-model="applicant.nationality"
+                                    type="text"
+                                    id="nationality"
+                                    name="nationality"
+                                    class="form-control"/>
+                            <div class="error"></div><!-- /.error -->
+                    </div>
+        
+        
+                    <div class="form-group">
+                        <label for="propertyvalue">Hvor mye koster boligen?</label><br />
+                            <input type="text" data-slider-min="100000" data-slider-max="10000000" data-slider-step="100000" data-slider-value="100000"
+                            ng-model="applicant.propertyvalue"
+                            id="propertyvalue"
+                            name="propertyvalue"/>
+                            <div class="error"></div><!-- /.error -->
+
+                    </div>
+        
+        
+                    <div class="form-group">
+                        <label for="amount">Ønsket lånebeløp?</label><br />
+                            <input type="text" data-slider-min="100000" data-slider-max="10000000" data-slider-step="100000" data-slider-value="100000"
+                            ng-model="applicant.amount"
+                            id="amount"
+                            name="amount"/>
+                            <div class="error"></div><!-- /.error -->
+
+                    </div>
+        
+                    <!-- <span class="validation-error" ng-show="applicant.propertyvalue < applicant.amount">Du kan ikke låne mer enn boligen koster!</span> --><!-- Fjernet for å vise JS validering -->
+                    <button class="btn btn-default" type="submit">Send inn skjema</button>
+        
+                </form>
+        </section>
+        
+        <section class="avsluttendeSeksjon">
+            <h2>Avsluttende seksjon</h2>
+            <div class="textWrapper">    
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum sem non velit fermentum, sed vestibulum lacus suscipit. Maecenas dapibus ut velit sed accumsan. Ut tincidunt scelerisque mi, eu tempor erat commodo id. Aenean ultrices, turpis sed condimentum rhoncus, turpis nibh tempor dui, vitae sagittis dolor erat vel orci. Etiam molestie dignissim aliquam. Maecenas quis neque tincidunt, lobortis nibh pretium, tincidunt diam. Praesent viverra magna quis elit fermentum, nec imperdiet turpis vestibulum. Quisque et arcu sit amet magna pellentesque dictum a in lorem. Sed blandit ante vitae feugiat dapibus. Vivamus adipiscing tempus neque, eu venenatis purus dictum at. Quisque non augue adipiscing, facilisis felis a, pretium ante. Proin adipiscing ac justo eget rhoncus. Mauris sollicitudin mauris eu nibh malesuada semper. Phasellus tristique commodo pretium.
+                </p>
+                <p>Morbi purus tortor, porta ac orci sit amet, aliquet vestibulum quam. Curabitur eu ornare dui. Maecenas tempor congue massa, nec porta leo euismod nec. Praesent sollicitudin lectus nisl, id volutpat tortor commodo vel. Phasellus et neque a mauris cursus pharetra. Suspendisse condimentum massa a quam rhoncus mattis. Fusce adipiscing mi vel commodo tincidunt. Fusce euismod ligula mi, ut sagittis elit gravida vitae. Donec pharetra massa quis urna euismod, eu ultrices sem hendrerit. Ut molestie, leo sed auctor tempor, lacus tortor tincidunt est, at dignissim libero erat eget ipsum. Nam venenatis ultrices tristique. Etiam fringilla nibh eget mauris blandit, et sagittis diam venenatis. Curabitur porta augue nec nisi mollis euismod. Donec massa erat, porta tempus ipsum at, porta tempus augue.
+                </p>
+                <p>Integer in luctus ipsum. Donec imperdiet sem varius magna luctus tincidunt. In sit amet lectus sed nunc convallis scelerisque vitae ac mi. Cras consectetur tellus quis tellus ultricies, sit amet semper nisi sodales. Nam molestie nulla in augue ultricies dignissim. Pellentesque eu eros mauris. Proin in mauris in erat rhoncus iaculis. Etiam tempus sit amet sem ut scelerisque. Curabitur ac ultrices dolor. Curabitur suscipit porta justo, vel dapibus ligula.
+                </p>
+                <p>Nullam nec lacus ut quam laoreet sodales nec non ipsum. Cras interdum vestibulum tempor. Vivamus nec ultrices tortor. In consectetur est vitae eleifend ullamcorper. Praesent in sodales dui. Ut non sagittis libero. Morbi quis urna in nisl tempus venenatis ac id erat. Praesent tempus quam erat, ac hendrerit neque facilisis eleifend. Nam blandit facilisis nibh, et malesuada ante pellentesque eu. Morbi quis sapien a leo porta cursus vitae non augue. Ut congue odio eu commodo placerat. Duis pellentesque tellus eu sapien suscipit, a consectetur quam pharetra. Nulla eleifend, nisi sit amet tempor lacinia, elit magna placerat lacus, sit amet molestie dui ipsum non mauris.
+                </p>
+                <p>Cras id elit vel arcu aliquam volutpat. Nullam a justo in diam lobortis rutrum at non nisl. Aenean tincidunt, eros eu ornare sollicitudin, ipsum nunc aliquet diam, et gravida nibh nulla sit amet metus. Duis id eros venenatis, egestas tortor eget, viverra nisi. Praesent hendrerit suscipit nisi, ullamcorper elementum metus placerat id. Maecenas auctor dui vel turpis faucibus, non facilisis dolor ullamcorper. Cras in vulputate dui. In non lobortis nisl, in malesuada arcu. Nullam luctus nibh nibh. Mauris elementum nisi quis turpis hendrerit varius. Donec feugiat congue orci vitae convallis. Vestibulum nec libero in est fringilla condimentum at ut dolor.
+                </p>
+        
+            </div>
+            <div class="arrowWrapper">
+                <span class="glyphicon glyphicon-chevron-up hidden-md hidden-lg"></span>
+            </div><!-- /.arrowWrapper --><br />
+        </section>
+
+</div><!-- /.container -->
+<div class="debug row" style="display:none">
         <h1>Schema values: </h1>
     
         <ul>
@@ -160,25 +158,9 @@
             </li>
         </ul>
     </div>
-</section><!-- /.container -->
-
 <script src="js/jquery.js"></script>
+<script src="js/bootstrap-slider.js"></script>
 <script src="js/main.min.js"></script>
-<script>
-    $(function(){
-    $(".arrowWrapper").on('click', function(){  
-        $(this).parent().find('.textWrapper').toggleClass('adjustHeight');
-
-        if($(this).find('span').hasClass('glyphicon glyphicon-chevron-down')){
-            $(this).find('span.glyphicon.glyphicon-chevron-down').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-        }
-        else{
-            $(this).find('span.glyphicon.glyphicon-chevron-up').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down'); 
-        }
-
-    });
-});
-</script>
 </body>
 
 </html>

@@ -2011,7 +2011,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 .btn:active,
@@ -2032,8 +2032,8 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #ffffff;
-  background-color: #0092a3;
+  color: #000000;
+  background-color: #eeeeee;
   border-color: #cccccc;
 }
 .btn-default:hover,
@@ -2041,8 +2041,8 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #ffffff;
-  background-color: #006d7a;
+  color: #000000;
+  background-color: #dadada;
   border-color: #adadad;
 }
 .btn-default:active,
@@ -2065,12 +2065,12 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #0092a3;
+  background-color: #eeeeee;
   border-color: #cccccc;
 }
 .btn-default .badge {
-  color: #0092a3;
-  background-color: #ffffff;
+  color: #eeeeee;
+  background-color: #000000;
 }
 .btn-primary {
   color: #ffffff;
@@ -5607,15 +5607,7 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after,
-.container header:before,
-.container header:after,
-.container .innledende:before,
-.container .innledende:after,
-.container .skjema:before,
-.container .skjema:after,
-.container .avsluttendeSeksjon:before,
-.container .avsluttendeSeksjon:after {
+.modal-footer:after {
   content: " ";
   display: table;
 }
@@ -5632,11 +5624,7 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after,
-.container header:after,
-.container .innledende:after,
-.container .skjema:after,
-.container .avsluttendeSeksjon:after {
+.modal-footer:after {
   clear: both;
 }
 .center-block {
@@ -5785,18 +5773,49 @@ button.close {
     display: none !important;
   }
 }
+.logo .logoWrapper {
+  position: fixed;
+  top: 0;
+  margin: 0 -15px 0 -15px;
+  padding: 0 0 0 0;
+  width: 1170px;
+  max-height: 53px;
+  background-color: white;
+  z-index: 999;
+}
+@media (min-width: 768px) {
+  .logo .logoWrapper {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .logo .logoWrapper {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .logo .logoWrapper {
+    width: 1170px;
+  }
+}
+.logo .logoWrapper img {
+  max-height: 53px;
+}
+.slider-selection {
+  background: #BABABA;
+}
 .container {
-  border-radius: 15px;
+  /*
+	border-radius: 15px;*/
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: white;
 }
 .container header {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-bottom: 50px;
   border-bottom: 1px solid #00738f;
 }
 .container .innledende {
-  margin-left: -15px;
-  margin-right: -15px;
+  text-align: justify;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -5805,17 +5824,18 @@ button.close {
 @media (min-width: 992px) {
   .container .innledende {
     float: left;
-    width: 33.33333333333333%;
+    width: 100%;
   }
 }
 .container .skjema {
-  margin-left: -15px;
-  margin-right: -15px;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 20px;
+  margin: 20px 0px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  background-color: #00738f;
 }
 @media (min-width: 992px) {
   .container .skjema {
@@ -5823,44 +5843,44 @@ button.close {
     width: 33.33333333333333%;
   }
 }
+.container .skjema h2 {
+  color: white;
+}
 .container .avsluttendeSeksjon {
-  margin-left: -15px;
-  margin-right: -15px;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  text-align: justify;
 }
 @media (min-width: 992px) {
   .container .avsluttendeSeksjon {
     float: left;
-    width: 33.33333333333333%;
+    width: 66.66666666666666%;
   }
 }
 .container .innledende .arrowWrapper,
 .container .avsluttendeSeksjon .arrowWrapper {
   text-align: center;
 }
-.container .innledende .adjustHeight,
-.container .avsluttendeSeksjon .adjustHeight {
-  visibility: hidden;
-  line-height: 0;
+@media (max-width: 991px) {
+  .container .innledende .adjustHeight,
+  .container .avsluttendeSeksjon .adjustHeight {
+    visibility: hidden;
+    line-height: 0;
+  }
 }
 /*container*/
-.mainContainer {
-  margin-top: 50px;
-}
 body {
   font-family: 'Crete Round', serif;
   background-color: #bbbbbb !important;
-  margin: 30px auto;
-}
-section {
-  background-color: #ffffff;
+  margin: 53px auto 25px auto;
 }
 h2 {
   color: #0092a3;
 }
-form .validation-error {
-  color: #27acbc;
+form .validation-error,
+form .error {
+  color: #aa0000;
+  font-weight: normal;
 }

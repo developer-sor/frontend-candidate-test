@@ -1,25 +1,60 @@
-.container{
-	border-radius: 15px;
-	
-	header{
-		.make-row();
-		padding-bottom: 50px;
-		border-bottom: 1px solid @darkBlue;
+//DIV
+.logo{
+	.logoWrapper{
+		position: fixed;
+		top: 0;
+		margin: 0 -15px 0 -15px;
+		padding: 0 0 0 0;
+		width: 1170px;
+		@media (min-width: @screen-sm-min) {
+		    width: @container-sm;
+		  }
+		  @media (min-width: @screen-md-min) {
+		    width: @container-md;
+		  }
+		  @media (min-width: @screen-lg-min) {
+		    width: @container-lg;
+		  }
+		max-height: 53px;
+		background-color: white;
+		z-index: 999;
+		img{
+			max-height: 53px;
+		}
+	}
+}
+//Slider i skjema. For å velge mengde
+.slider-selection {
+	background: #BABABA;
+}
+//CONTAINER
+.container{/*
+	border-radius: 15px;*/
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	background-color: white;
 
+	header{
+		border-bottom: 1px solid @darkBlue;
 	}
 
 	.innledende{
-		.make-row();
-		.make-md-column(4);
+		text-align: justify;
+		.make-md-column(12);
 	}
 	.skjema{
-		.make-row();
 		.make-md-column(4);
-		margin-top: 20px;
+		margin: 20px 0px;
+		padding: 5px 15px;
+		border-radius: 15px;
+		background-color: @darkBlue;
+		h2{
+			color: white;
+		}
 	}
 	.avsluttendeSeksjon{
-		.make-row();
-		.make-md-column(4);
+		.make-md-column(8);
+		text-align: justify;
 	}
 
 	.innledende,
@@ -28,12 +63,11 @@
 			text-align: center;
 		}
 		.adjustHeight{
-			visibility: hidden;
-			line-height: 0;
+			@media (max-width: @screen-sm-max) {
+			    visibility: hidden;
+				line-height: 0;
+			  }
+			
 		}
 	}
 }/*container*/
-
-.mainContainer{
-	margin-top: 50px;
-}

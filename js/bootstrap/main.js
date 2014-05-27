@@ -1,3 +1,4 @@
+//@prepros-append ../myscript.js
 //@prepros-append affix.js
 //@prepros-append transition.js
 //@prepros-append tooltip.js
